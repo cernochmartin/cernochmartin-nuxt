@@ -1,0 +1,12 @@
+:root {
+    --blue-primary: '#3559c7';
+    --blue-secondary: '#00a3ff'
+}
+
+h1 {
+    font-size: 64px;
+}
+
+.gradient-background {
+    background: linear-gradient(to right, var(--blue-primary), var(--blue-secondary));
+}
