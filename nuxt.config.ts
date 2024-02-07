@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts', 
-     '@nuxt/image'
+    '@nuxt/image'
   ],
   css: ['~/assets/style.css'],
   googleFonts: {

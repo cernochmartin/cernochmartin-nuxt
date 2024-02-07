@@ -17,9 +17,11 @@ const routes = [
 const routeId = useId()
 </script>
 <template>
-    <ul>
-        <li v-for="route in routes" :key="routeId">
-            <NuxtLink :to="route.path">{{ route.name }}</NuxtLink>
-        </li>
-    </ul>
+    <nav>
+        <ul>
+            <li v-for="route in routes" :key="routeId">
+                <NuxtLink :to="route.path">{{ route.name }}</NuxtLink>
+            </li>
+        </ul>
+    </nav>
 </template>
