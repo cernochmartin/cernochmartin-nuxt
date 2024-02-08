@@ -1,5 +1,7 @@
 <template>
     <TheNav />
-    <slot />
+    <main>
+        <slot />
+    </main>
     <TheFooter />
 </template>

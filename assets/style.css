@@ -7,6 +7,18 @@ h1 {
     font-size: 64px;
 }
 
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p, span, input {
+    font-size: 16px;
+}
+
 .gradient-background {
     background: linear-gradient(to right, var(--blue-primary), var(--blue-secondary));
 }

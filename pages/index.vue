@@ -1,12 +1,17 @@
 <script setup lang="ts">
-const app = useAppConfig()
+const meta = useSiteMeta()
 
-console.log(app.foo)
+useSeoMeta({
+    title: meta.SiteName,
+    ogTitle: meta.SiteName,
+    description: meta.SiteDescription,
+    ogDescription: meta.SiteDescription
+})
 </script>
 <template>
     <div>
-        <h1 class="text-blue-primary">Černoch Martin blog</h1>
-        <NuxtImg src="/profile-picture.png" alt="Me presenting at konference.tech." />
-        {{ app.foo }}
+        <h1 class="text-blue-primary">{{ meta.SiteName }}</h1>
+        <h2>{{ meta.SiteTagLine }}</h2>
+        <NuxtImg :src="meta.SiteLogo" alt="Me presenting at konference.tech." />
     </div>
 </template>

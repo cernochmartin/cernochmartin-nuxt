@@ -1,0 +1,8 @@
+export const SiteName = 'Martin Černoch'
+export const SiteUrl = 'https://cernochmartin.com'
+export const SiteImage = ''
+export const SiteLogo = '/profile-picture.png'
+export const SiteLanguage = 'en-US'
+export const SiteTagLine = 'Full-stack Developer'
+export const SiteDescription = 'Hey, I\'m Martin, a full-stack web developer living in Kolín, Czechia. I\'m passionate about building SaaS solutions in the Vue, Nuxt and Hono frameworks.'
+export const SameAs = 'https://github.com/cernochmartin'
