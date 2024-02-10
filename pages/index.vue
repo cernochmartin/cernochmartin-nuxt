@@ -9,6 +9,7 @@ useSeoMeta({
 })
 </script>
 <template>
+    <HeroBanner :image="meta.SiteImage" alt="Me presenting at konference.tech." />
     <div>
         <h1 class="text-blue-primary">{{ meta.SiteName }}</h1>
         <h2>{{ meta.SiteTagLine }}</h2>

@@ -1,6 +1,6 @@
 export const SiteName = 'Martin Černoch'
 export const SiteUrl = 'https://cernochmartin.com'
-export const SiteImage = ''
+export const SiteImage = '/hero-banner.png'
 export const SiteLogo = '/profile-picture.png'
 export const SiteLanguage = 'en-US'
 export const SiteTagLine = 'Full-stack Developer'
