@@ -1,4 +1,4 @@
-import { SiteName, SiteUrl, SiteImage, SiteLogo, SiteLanguage, SiteTagLine, SiteDescription } from '~/logic/const'
+import { SiteName, SiteUrl, SiteImage, SiteLogo, SiteLanguage, SiteTagLine, SiteDescription, SameAs } from '~/logic/const'
 
 export function useSiteMeta() {
     return {
@@ -8,6 +8,7 @@ export function useSiteMeta() {
         SiteLogo,
         SiteLanguage,
         SiteTagLine,
-        SiteDescription
+        SiteDescription,
+        SameAs
     }
 }

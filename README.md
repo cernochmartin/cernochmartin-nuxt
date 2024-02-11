@@ -1,1 +1,1 @@
-# Martin Černoch blog
+# Martin Černoch website
