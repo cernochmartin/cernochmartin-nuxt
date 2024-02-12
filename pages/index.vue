@@ -36,4 +36,10 @@ const button = [
             <BaseImage image="profile-picture.png" alt="Me presenting at konference.tech in 27th October 2023." class="rounded-lg" />
         </div>
     </section>
+    <section>
+        <h2>My stack</h2>
+    </section>
+    <!-- <section>
+        <BaseImage image="konference-tech.png" alt="" />
+    </section> -->
 </template>
