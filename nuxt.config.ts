@@ -4,7 +4,6 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts', 
     '@nuxt/image',
-    // '@sidebase/nuxt-auth'
   ],
 
   css: ['~/assets/style.css'],
