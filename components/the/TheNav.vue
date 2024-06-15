@@ -1,38 +1,22 @@
 <script setup lang="ts">
-const meta = useSiteMeta()
-
-const routes = [
-    {
-        path: '/',
-        name: 'Home'
-    },
-    {
-        path: '/articles',
-        name: 'Articles'
-    },
-    {
-        path: '/projects',
-        name: 'Projects'
-    },
-    {
-        path: '/auth',
-        name: 'Login'
-    },
-]
-
-const routeId = useId()
+const isNavOpen = ref(false)
 </script>
 <template>
-    <nav class="h-16 border-b-2 border-blue-secondary flex justify-between items-center px-28">
-        <ul class="flex gap-8">
-            <li v-for="route in routes" :key="routeId">
-                <NuxtLink :to="route.path" class="animation-link">{{ route.name }}</NuxtLink>
-            </li>
-        </ul>
-        <ul class="flex gap-8">
-            <li v-for="sameAs in meta.SameAs" :key="routeId">
-                <NuxtLink :to="sameAs.path" target="_blank" class="animation-link"><i :class="`${sameAs.icon}`" class="fa-xl" /></NuxtLink>
-            </li>
-        </ul>
+    <nav class="min-height w-20 border-r-2 border-white fixed flex flex-col justify-between items-center py-8">
+        <i @click="isNavOpen = !isNavOpen" class="fa-solid fa-bars fa-2xl text-white cursor-pointer" />
+        <div class="flex flex-col items-center gap-4">
+            <NuxtLink to="https://www.linkedin.com/in/cernochmartin/" target="_blank">
+                <i class="fa-brands fa-linkedin-in fa-md text-white" />
+            </NuxtLink>
+            <NuxtLink to="https://github.com/cernochmartin" target="_blank">
+                <i class="fa-brands fa-github fa-md text-white" />
+            </NuxtLink>
+        </div>
     </nav>
+
+    <div v-if="isNavOpen">
+        <NuxtLink to="/" class="text-white">Home</NuxtLink>
+        <NuxtLink to="/about" class="text-white">About</NuxtLink>
+        <NuxtLink to="/contact" class="text-white">Contact</NuxtLink>
+    </div>
 </template>

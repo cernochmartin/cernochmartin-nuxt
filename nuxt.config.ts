@@ -5,19 +5,14 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts', 
     '@nuxt/image',
   ],
-
-  css: ['~/assets/style.css'],
-
   googleFonts: {
     families: {
-      'DM Sans': true
+      'Poppins': true
     }
   },
-
   image: {
     format: ['webp']
   },
-
   app: {
     head: {
       charset: 'utf-8',
@@ -30,5 +25,4 @@ export default defineNuxtConfig({
       }
     }
   }
-
 })
