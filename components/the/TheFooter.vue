@@ -7,7 +7,9 @@ const year = new Date().getFullYear()
             <NuxtLink to="/contact" class="animation-underline">Contact</NuxtLink>
             <NuxtLink to="/references" class="animation-underline">References</NuxtLink>
         </p>
-        <p>&#169; {{ year }} - <NuxtLink to="mailto:cernochm@outlook.cz" class="animation-underline">Martin Černoch
-            </NuxtLink>. All rights reserved.</p>
+        <p>&#169; {{ year }} - <NuxtLink to="mailto:cernochm@outlook.cz" target="_blank" class="animation-underline">
+                Martin Černoch</NuxtLink>.
+            All rights reserved.
+        </p>
     </footer>
 </template>

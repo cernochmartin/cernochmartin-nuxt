@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const navPopup = ref(false)
+
 const meta = useSiteMeta()
 
 const showIntro = ref(true)
@@ -6,25 +8,55 @@ const showIntro = ref(true)
 onMounted(() => {
   setTimeout(() => {
     showIntro.value = false
-  }, 1500)
+  }, 1200)
 })
+
+function handleNavEvent(eventData: boolean) {
+  if (eventData === true) {
+    navPopup.value = true
+  } else {
+    navPopup.value = false
+  }
+}
 </script>
 <template>
   <div v-if="showIntro" class="bg-black min-height flex flex-col items-center justify-center">
     <h1>{{ meta.SiteName }}</h1>
     <h2>{{ meta.SiteTagLine }}</h2>
+    <div class="loading-slider mt-24" />
   </div>
-    <div v-else class="bg-black text-white min-height">
+  <div v-else class="bg-black text-white min-height">
+    <div>
       <aside>
-        <TheNav />
+        <TheNav @isNavOpen="handleNavEvent" />
       </aside>
-      <main>
+      <main v-if="navPopup" class="min-height flex items-center justify-center">
+        <div>
+          <div class="grid grid-cols-2 gap-x-16 gap-y-8 text-blue-primary uppercase">
+            <NuxtLink to="/references" class="hover:text-white duration-300 text-5xl">References</NuxtLink>
+            <NuxtLink to="/skills" class="hover:text-white duration-300 text-5xl">Skills</NuxtLink>
+            <NuxtLink to="/contact" class="hover:text-white duration-300 text-5xl">Contact</NuxtLink>
+          </div>
+          <div class="mt-8 w-full flex gap-4 items-center">
+            <p class="text-2xl">Also on</p>
+            <div class="flex gap-4">
+              <NuxtLink to="https://www.linkedin.com/in/cernochmartin/" target="_blank">
+                <i class="fa-brands fa-linkedin-in fa-xl" />
+              </NuxtLink>
+              <NuxtLink to="https://github.com/cernochmartin" target="_blank">
+                <i class="fa-brands fa-github fa-xl" />
+              </NuxtLink>
+            </div>
+          </div>
+        </div>
+      </main>
+      <main v-else>
         <NuxtPage />
       </main>
-      <TheFooter />
+      <TheFooter v-if="!navPopup" />
     </div>
+  </div>
 </template>
-
 <style>
 * {
   margin: 0;
@@ -107,6 +139,23 @@ header {
 
 .animation-transform:hover::after {
   transform: skewX(-45deg) translateX(50%);
+}
+
+.loading-slider {
+  height: 8px;
+  width: 100%;
+  background: linear-gradient(to right, #ffffff, rgb(53, 89, 199));
+  animation: loading-slider 1.5s infinite;
+}
+
+@keyframes loading-slider {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .min-height {

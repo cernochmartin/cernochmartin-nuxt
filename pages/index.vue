@@ -4,17 +4,22 @@ const meta = useSiteMeta()
 const banners = [
     {
         img: '/konference-tech.png',
-        link: '/konference-tech'
+        link: '/'
     },
     {
         img: '/konference-tech.png',
-        link: '/konference-tech'
+        link: '/'
     },
     {
         img: '/konference-tech.png',
-        link: '/konference-tech'
+        link: '/'
     }
 ]
+
+useSeoMeta({
+    title: meta.SiteName,
+    description: meta.SiteDescription
+})
 </script>
 <template>
     <div class="flex py-24">
