@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const navPopup = ref(false)
+const navPopup = ref<boolean>(false)
 
 const meta = useSiteMeta()
 
-const showIntro = ref(true)
+const showIntro = ref<boolean>(true)
 
 onMounted(() => {
   setTimeout(() => {
@@ -20,31 +20,32 @@ function handleNavEvent(eventData: boolean) {
 }
 </script>
 <template>
-  <div v-if="showIntro" class="bg-black min-height flex flex-col items-center justify-center">
+  <div v-if="showIntro" class="min-height flex flex-col items-center justify-center">
     <h1>{{ meta.SiteName }}</h1>
     <h2>{{ meta.SiteTagLine }}</h2>
     <div class="loading-slider mt-24" />
   </div>
-  <div v-else class="bg-black text-white min-height">
+  <div v-else class="min-height">
     <div>
       <aside>
         <TheNav @isNavOpen="handleNavEvent" />
       </aside>
       <main v-if="navPopup" class="min-height flex items-center justify-center">
         <div>
-          <div class="grid grid-cols-2 gap-x-16 gap-y-8 text-blue-primary uppercase">
-            <NuxtLink to="/references" class="hover:text-white duration-300 text-5xl">References</NuxtLink>
-            <NuxtLink to="/skills" class="hover:text-white duration-300 text-5xl">Skills</NuxtLink>
-            <NuxtLink to="/contact" class="hover:text-white duration-300 text-5xl">Contact</NuxtLink>
+          <div class="grid grid-cols-2 gap-x-16 gap-y-8 text-blue-primary uppercase font-semibold">
+            <NuxtLink @click="navPopup = false" to="/" class="hover:text-white duration-300 text-5xl">Home</NuxtLink>
+            <NuxtLink @click="navPopup = false" to="/references" class="hover:text-white duration-300 text-5xl">References</NuxtLink>
+            <NuxtLink @click="navPopup = false" to="/skills" class="hover:text-white duration-300 text-5xl">Skills</NuxtLink>
+            <NuxtLink @click="navPopup = false" to="/contact" class="hover:text-white duration-300 text-5xl">Contact</NuxtLink>
           </div>
           <div class="mt-8 w-full flex gap-4 items-center">
             <p class="text-2xl">Also on</p>
             <div class="flex gap-4">
               <NuxtLink to="https://www.linkedin.com/in/cernochmartin/" target="_blank">
-                <i class="fa-brands fa-linkedin-in fa-xl" />
+                <i class="fa-brands fa-linkedin-in fa-md" />
               </NuxtLink>
               <NuxtLink to="https://github.com/cernochmartin" target="_blank">
-                <i class="fa-brands fa-github fa-xl" />
+                <i class="fa-brands fa-github fa-md" />
               </NuxtLink>
             </div>
           </div>
@@ -64,6 +65,11 @@ function handleNavEvent(eventData: boolean) {
 }
 
 body {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.dark-mode body {
   color: #ffffff;
   background-color: #000000;
 }
@@ -144,7 +150,7 @@ header {
 .loading-slider {
   height: 8px;
   width: 100%;
-  background: linear-gradient(to right, #ffffff, rgb(53, 89, 199));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgb(53, 89, 199));
   animation: loading-slider 1.5s infinite;
 }
 
