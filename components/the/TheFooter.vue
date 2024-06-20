@@ -2,7 +2,7 @@
 const year = new Date().getFullYear()
 </script>
 <template>
-    <footer class="h-12 flex flex-col gap-4 items-center justify-center text-white/50">
+    <footer class="h-12 flex flex-col gap-4 items-center justify-center text-footer">
         <p class="uppercase flex justify-between w-[240px]">
             <NuxtLink to="/contact" class="animation-underline">Contact</NuxtLink>
             <NuxtLink to="/references" class="animation-underline">References</NuxtLink>

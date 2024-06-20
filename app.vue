@@ -32,11 +32,14 @@ function handleNavEvent(eventData: boolean) {
       </aside>
       <main v-if="navPopup" class="min-height flex items-center justify-center">
         <div>
-          <div class="grid grid-cols-2 gap-x-16 gap-y-8 text-blue-primary uppercase font-semibold">
-            <NuxtLink @click="navPopup = false" to="/" class="hover:text-white duration-300 text-5xl">Home</NuxtLink>
-            <NuxtLink @click="navPopup = false" to="/references" class="hover:text-white duration-300 text-5xl">References</NuxtLink>
-            <NuxtLink @click="navPopup = false" to="/skills" class="hover:text-white duration-300 text-5xl">Skills</NuxtLink>
-            <NuxtLink @click="navPopup = false" to="/contact" class="hover:text-white duration-300 text-5xl">Contact</NuxtLink>
+          <div class="grid grid-cols-2 gap-x-16 gap-y-8 text-secondary hover-text uppercase font-semibold">
+            <NuxtLink @click="navPopup = false" to="/" class="hover-text-secondary duration-300 text-5xl">Home</NuxtLink>
+            <NuxtLink @click="navPopup = false" to="/references" class="hover-text-secondary duration-300 text-5xl">
+              References</NuxtLink>
+            <NuxtLink @click="navPopup = false" to="/skills" class="hover-text-secondary duration-300 text-5xl">Skills
+            </NuxtLink>
+            <NuxtLink @click="navPopup = false" to="/contact" class="hover-text-secondary duration-300 text-5xl">Contact
+            </NuxtLink>
           </div>
           <div class="mt-8 w-full flex gap-4 items-center">
             <p class="text-2xl">Also on</p>
@@ -69,9 +72,49 @@ body {
   background-color: #ffffff;
 }
 
+.text-secondary {
+  color: #3559c7;
+}
+
+.dark-mode .text-secondary {
+  color: #00a3ff;
+}
+
 .dark-mode body {
   color: #ffffff;
   background-color: #000000;
+}
+
+.hover-text:hover {
+  color: #3559c7;
+}
+
+.dark-mode .hover-text:hover {
+  color: #00a3ff;
+}
+
+.hover-text-secondary:hover {
+  color: #000000;
+}
+
+.dark-mode .hover-text-secondary:hover {
+  color: #ffffff;
+}
+
+.border-color {
+  border-color: #000000;
+}
+
+.dark-mode .border-color {
+  border-color: #ffffff;
+}
+
+.text-footer {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .text-footer {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 h1 {
@@ -141,6 +184,10 @@ header {
   background: rgba(53, 89, 199, 0.8);
   transform: skewX(-45deg) translateX(-50%);
   transition: transform 0.5s ease-in-out;
+}
+
+.dark-mode .animation-transform::after {
+  background: rgba(0, 163, 255, 0.8);
 }
 
 .animation-transform:hover::after {
