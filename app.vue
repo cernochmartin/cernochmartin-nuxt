@@ -126,6 +126,11 @@ h1 {
 h2 {
   font-size: 32px;
   font-weight: 500;
+  color: #3559c7;
+}
+
+.dark-mode h2 {
+  color: #00a3ff;
 }
 
 h3,

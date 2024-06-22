@@ -4,15 +4,15 @@ const meta = useSiteMeta()
 const banners = [
     {
         img: '/konference-tech.png',
-        link: '/'
+        link: '/references/web'
     },
     {
         img: '/konference-tech.png',
-        link: '/'
+        link: '/references/marketing'
     },
     {
         img: '/konference-tech.png',
-        link: '/'
+        link: '/references/cloud'
     }
 ]
 
@@ -22,7 +22,7 @@ useSeoMeta({
 })
 </script>
 <template>
-    <div class="flex py-24">
+    <section class="flex py-24">
         <div class="w-1/2 flex justify-center">
             <NuxtImg :src="meta.SiteLogo" />
         </div>
@@ -38,5 +38,13 @@ useSeoMeta({
                 <BaseBanner v-for="item in banners" v-bind="item" />
             </div>
         </div>
-    </div>
+    </section>
+    <section class="flex flex-col gap-8 py-24">
+        <h2>About me</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc ultrices. Donec nec
+            consectetur
+            nunc. Nullam nec nunc nec nunc ultrices.
+        </p>
+    </section>
 </template>
