@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   ],
   googleFonts: {
     families: {
-      'Poppins': true
+      'DM Sans': true
     }
   },
   image: {

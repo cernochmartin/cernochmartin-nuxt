@@ -17,14 +17,14 @@ const banners = [
 ]
 
 useSeoMeta({
-    title: meta.SiteName,
+    title: meta.SiteName + ' - Web Developer, IT Consultant, Marketing Coordinator',   
     description: meta.SiteDescription
 })
 </script>
 <template>
-    <section class="flex py-24">
+    <section class="flex py-20">
         <div class="w-1/2 flex justify-center">
-            <NuxtImg :src="meta.SiteLogo" />
+            <NuxtImg :src="meta.SiteLogo" class="rounded-xl" />
         </div>
         <div class="w-1/2">
             <header>
@@ -38,13 +38,5 @@ useSeoMeta({
                 <BaseBanner v-for="item in banners" v-bind="item" />
             </div>
         </div>
-    </section>
-    <section class="flex flex-col gap-8 py-24">
-        <h2>About me</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc ultrices. Donec nec
-            consectetur
-            nunc. Nullam nec nunc nec nunc ultrices.
-        </p>
     </section>
 </template>

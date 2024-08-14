@@ -8,7 +8,7 @@ const showIntro = ref<boolean>(true)
 onMounted(() => {
   setTimeout(() => {
     showIntro.value = false
-  }, 1200)
+  }, 600)
 })
 
 function handleNavEvent(eventData: boolean) {
@@ -68,8 +68,13 @@ function handleNavEvent(eventData: boolean) {
 }
 
 body {
-  color: #000000;
+  color: #212121;
   background-color: #ffffff;
+}
+
+.dark-mode body {
+  color: #ffffff;
+  background-color: #212121;
 }
 
 .text-secondary {
@@ -78,11 +83,6 @@ body {
 
 .dark-mode .text-secondary {
   color: #00a3ff;
-}
-
-.dark-mode body {
-  color: #ffffff;
-  background-color: #000000;
 }
 
 .hover-text:hover {
