@@ -1,3 +1,6 @@
+<script setup lang="ts">
+const reference = useReferences().ReferenceWeb
+</script>
 <template>
-    web
+    {{ reference }}
 </template>
