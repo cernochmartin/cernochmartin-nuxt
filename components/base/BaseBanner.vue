@@ -5,8 +5,8 @@ const props = defineProps<{
 }>()
 </script>
 <template>
-    <NuxtLink :to="link">
-        <div class="animation-transform w-[480px] h-[80px]">
+    <NuxtLink :to="props.link">
+        <div class="animation-transform w-[480px] h-[80px] rounded-md">
             <NuxtImg :src="props.img" />
         </div>
     </NuxtLink>

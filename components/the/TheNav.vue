@@ -24,7 +24,7 @@ function changeColorMode() {
 </script>
 <template>
     <nav class="min-height w-20 border-r-2 border-color fixed flex flex-col justify-between items-center py-8">
-        <i @click="isNavOpen()" class="hover-text duration-300 cursor-pointer fa-solid fa-bars fa-2xl" />
+        <i @click="isNavOpen()" :class="isOpen ? 'fa-x' : 'fa-bars'" class="hover-text duration-300 cursor-pointer fa-solid fa-2xl" />
         <div class="flex flex-col items-center gap-4">
             <i @click="changeColorMode()"
                 class="fa-solid text-[24px] hover-text duration-300 cursor-pointer"
