@@ -133,6 +133,22 @@ h2 {
   color: #00a3ff;
 }
 
+input,
+textarea {
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+input {
+  height: 28px;
+}
+
+textarea {
+  height: 100px;
+}
+
 h3,
 a,
 span {
@@ -152,6 +168,28 @@ header {
   width: 640px;
   margin: 0 auto;
   text-align: center;
+}
+
+.full {
+    background-color: #3559c7;
+    color: #ffffff;
+}
+
+.outline {
+    background-color: transparent;
+    border: 0.5px solid #3559c7;
+    color: #3559c7;
+}
+
+.dark-mode .full {
+    background-color: #00a3ff;
+    color: #ffffff;
+}
+
+.dark-mode .outline {
+    background-color: transparent;
+    border: 0.5px solid #00a3ff;
+    color: #00a3ff;
 }
 
 .animation-underline {

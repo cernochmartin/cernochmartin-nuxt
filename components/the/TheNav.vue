@@ -1,8 +1,6 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
-
 const isOpen = ref<boolean>(false)
-
 const emit = defineEmits(['isNavOpen'])
 
 function isNavOpen() {
