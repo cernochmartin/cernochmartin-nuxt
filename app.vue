@@ -138,11 +138,11 @@ textarea {
     background-color: transparent;
     border: 1px solid;
     border-radius: 6px;
-    padding: 4px;
+    padding: 8px;
 }
 
 input {
-  height: 28px;
+  height: 32px;
 }
 
 textarea {
@@ -156,7 +156,8 @@ span {
 }
 
 p,
-input {
+input,
+textarea {
   font-size: 16px;
 }
 

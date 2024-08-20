@@ -25,7 +25,7 @@ const phoneValidation = computed(() => {
     return phonePattern.test(form.phone)
 })
 
-async function submitForm() {
+function submitForm() {
     if (!phoneValidation.value && !emailValidation.value) {
         errorMessage.value = 'Email and phone are not valid'
     }
@@ -35,8 +35,17 @@ async function submitForm() {
     else if (!phoneValidation.value) {
         errorMessage.value = 'Phone is not valid'
     }
-    else if (emailValidation.value && phoneValidation.value) {
-        console.log(form)
+    else if (form.message.length === 0) {
+        errorMessage.value = 'Message is required'
+    }
+    else if (emailValidation.value && phoneValidation.value && form.message.length > 0) {
+        $fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(form)
+        })
     }
 }
 
@@ -46,37 +55,41 @@ useSeoMeta({
 })
 </script>
 <template>
-    <section class="flex justify-center">
+    <section class="flex">
         <article class="w-1/2 min-height flex justify-center items-center">
             <div>
-                <h2>
-                    Contact me for future collaboration!
-                </h2>
+                <h2>Contact me for future collaboration!</h2>
                 <div class="flex flex-col gap-2 mt-6">
-                    <NuxtLink to="mailto:cernochm@outlook.cz" target="_blank">
-                        <i class="fa-solid fa-envelope pr-2" /> cernochm@outlook.cz
-                    </NuxtLink>
-                    <NuxtLink to="tel:+420775064499">
-                        <i class="fa-solid fa-phone pr-2" /> (+420) 775 064 499
-                    </NuxtLink>
-                    <NuxtLink to="https://www.innodex.cz" target="_blank">
-                        <i class="fa-solid fa-globe pr-2" /> www.innodex.cz
-                    </NuxtLink>
+                    <div>
+                        <NuxtLink to="mailto:cernochm@outlook.cz" target="_blank" class="animation-underline">
+                            <i class="fa-solid fa-envelope pr-2" /> cernochm@outlook.cz
+                        </NuxtLink>
+                    </div>
+                    <div>
+                        <NuxtLink to="tel:+420775064499" class="animation-underline">
+                            <i class="fa-solid fa-phone pr-2" /> (+420) 775 064 499
+                        </NuxtLink>
+                    </div>
+                    <div>
+                        <NuxtLink to="https://www.innodex.cz" target="_blank" class="animation-underline">
+                            <i class="fa-solid fa-globe pr-2" /> www.innodex.cz
+                        </NuxtLink>
+                    </div>
                 </div>
             </div>
         </article>
         <article class="w-1/2 min-height flex justify-center items-center">
             <div class="flex flex-col gap-2 w-[480px]">
                 <label for="text">Name*</label>
-                <input v-model="form.name" type="text" class="border-color" required />
+                <input v-model="form.name" type="text" placeholder="Name*" class="border-color" required />
                 <label for="email">Email*</label>
-                <input v-model="form.email" type="email" class="border-color" required />
+                <input v-model="form.email" type="email" placeholder="Email*" class="border-color" required />
                 <label for="text">Phone</label>
-                <input v-model="form.phone" type="text" class="border-color" />
+                <input v-model="form.phone" type="text" placeholder="Phone" class="border-color" />
                 <label for="text">Company</label>
-                <input v-model="form.company" type="text" class="border-color" />
+                <input v-model="form.company" type="text" placeholder="Company" class="border-color" />
                 <label for="text">Message*</label>
-                <textarea v-model="form.message" class="border-color" required />
+                <textarea v-model="form.message" placeholder="Message*" class="border-color" required />
                 <button @click="submitForm()" class="full px-3 text-white text-center py-1.5 rounded-md mt-4">
                     Submit
                 </button>
