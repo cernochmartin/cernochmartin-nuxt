@@ -35,10 +35,13 @@ function submitForm() {
     else if (!phoneValidation.value) {
         errorMessage.value = 'Phone is not valid'
     }
+    else if (form.name.length === 0) {
+        errorMessage.value = 'Name is required'
+    }
     else if (form.message.length === 0) {
         errorMessage.value = 'Message is required'
     }
-    else if (emailValidation.value && phoneValidation.value && form.message.length > 0) {
+    else if (emailValidation.value && phoneValidation.value && form.message.length > 0 && form.name.length > 0) {
         $fetch('/api/contact', {
             method: 'POST',
             headers: {
