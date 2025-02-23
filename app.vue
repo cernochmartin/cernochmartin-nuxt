@@ -1,8 +1,5 @@
 <script setup lang="ts">
-const navPopup = ref<boolean>(false)
-
 const meta = useSiteMeta()
-
 const showIntro = ref<boolean>(true)
 
 onMounted(() => {
@@ -10,14 +7,6 @@ onMounted(() => {
     showIntro.value = false
   }, 600)
 })
-
-function handleNavEvent(eventData: boolean) {
-  if (eventData === true) {
-    navPopup.value = true
-  } else {
-    navPopup.value = false
-  }
-}
 </script>
 <template>
   <div v-if="showIntro" class="min-height flex flex-col items-center justify-center">
@@ -28,36 +17,12 @@ function handleNavEvent(eventData: boolean) {
   <div v-else class="min-height">
     <div>
       <aside>
-        <TheNav @isNavOpen="handleNavEvent" />
+        <TheNav />
       </aside>
-      <main v-if="navPopup" class="min-height flex items-center justify-center">
-        <div>
-          <div class="grid grid-cols-2 gap-x-16 gap-y-8 text-secondary hover-text uppercase font-semibold">
-            <NuxtLink @click="navPopup = false" to="/" class="hover-text-secondary duration-300 text-5xl">Home</NuxtLink>
-            <NuxtLink @click="navPopup = false" to="/references" class="hover-text-secondary duration-300 text-5xl">
-              References</NuxtLink>
-            <NuxtLink @click="navPopup = false" to="/skills" class="hover-text-secondary duration-300 text-5xl">Skills
-            </NuxtLink>
-            <NuxtLink @click="navPopup = false" to="/contact" class="hover-text-secondary duration-300 text-5xl">Contact
-            </NuxtLink>
-          </div>
-          <div class="mt-8 w-full flex gap-4 items-center">
-            <p class="text-2xl">Also on</p>
-            <div class="flex gap-4">
-              <NuxtLink to="https://www.linkedin.com/in/cernochmartin/" target="_blank">
-                <i class="fa-brands fa-linkedin-in fa-md" />
-              </NuxtLink>
-              <NuxtLink to="https://github.com/cernochmartin" target="_blank">
-                <i class="fa-brands fa-github fa-md" />
-              </NuxtLink>
-            </div>
-          </div>
-        </div>
-      </main>
-      <main v-else>
+      <main>
         <NuxtPage />
       </main>
-      <TheFooter v-if="!navPopup" />
+      <TheFooter />
     </div>
   </div>
 </template>

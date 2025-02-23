@@ -3,18 +3,15 @@ const meta = useSiteMeta()
 
 const banners = [
     {
-        img: '/konference-tech.png',
-        link: '/references/web',
-        title: 'Web development'
+        img: '/web-image.png',
+        title: 'Web development',
     },
     {
-        img: '/konference-tech.png',
-        link: '/references/marketing',
-        title: 'Marketing'
+        img: '/network-image.png',
+        title: 'IT infrastructure'
     },
     {
-        img: '/konference-tech.png',
-        link: '/references/cloud',
+        img: '/consultation-image.png',
         title: 'IT consulting'
     }
 ]
