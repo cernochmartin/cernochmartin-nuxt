@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const icons = [
+const icons: { link: string; icon: string }[] = [
   {
     link: 'https://github.com/cernochmartin',
     icon: 'fa-brands fa-github fa-2xl'
@@ -9,6 +9,13 @@ const icons = [
     icon: 'fa-brands fa-linkedin fa-2xl'
   }
 ]
+
+useSeoMeta({
+  title: 'Martin Černoch - Software engineering student',
+  description: 'Software engineering student and founder of Innodex s.r.o.',
+  ogTitle: 'Martin Černoch - Software engineering student',
+  ogDescription: 'Software engineering student and founder of Innodex s.r.o.'
+})
 </script>
 <template>
   <div class="bg-secondary text-primary p-4">
