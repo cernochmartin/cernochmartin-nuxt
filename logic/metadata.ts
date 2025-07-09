@@ -1,7 +1,0 @@
-export const SiteName = 'Černoch Martin'
-export const SiteUrl = 'https://cernochmartin.com'
-export const SiteImage = '/hero-banner.png'
-export const SiteLogo = '/profile-picture.png'
-export const SiteLanguage = 'en-US'
-export const SiteTagLine = 'Creating the best IT solutions for you'
-export const SiteDescription = 'Hello, I\'m a student currently working under my brand Innodex as a Product and Solutions Lead, where I specialize in identifying and delivering the best IT solutions tailored to our clients\' needs. Contact me for more information.'

@@ -1,18 +1,22 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts', 
     '@nuxt/image',
   ],
+
   googleFonts: {
     families: {
       'DM Sans': true
     }
   },
+
   image: {
     format: ['webp']
   },
+
   app: {
     head: {
       charset: 'utf-8',
@@ -24,5 +28,7 @@ export default defineNuxtConfig({
         lang: 'en-US'
       }
     }
-  }
+  },
+
+  compatibilityDate: '2025-07-09'
 })
